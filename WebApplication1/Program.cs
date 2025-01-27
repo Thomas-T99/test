@@ -4,10 +4,28 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", policy =>
+    {
+        policy.WithOrigins("https://your-website.com") // Replace with your frontend URL
+              .AllowAnyHeader()                       // Allow all headers
+              .AllowAnyMethod();                      // Allow all HTTP methods
+    });
+
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()                       // Allow all origins (for testing purposes)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+})
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.MapOpenApi();
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
