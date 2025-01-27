@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PfOzf3Ha8Lc=",
+  "success": true,
+  "projectFilePath": "/Users/sarahboddington/CarbonMap/carbon-map/WebApplication1/WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "/Users/sarahboddington/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "/Users/sarahboddington/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
